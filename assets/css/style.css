@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+html {
+}
+img {
+  padding: 1%;
+}
+
+h1 {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#rcorners1 {
+  border-radius: 25px;
+  background: #d3d3d3;
+  padding: 20px;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+}
