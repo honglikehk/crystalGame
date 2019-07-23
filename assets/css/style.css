@@ -1,9 +1,13 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0ffff;
+}
+
 .container {
   display: flex;
   justify-content: center;
 }
-html {
-}
+
 img {
   padding: 1%;
 }
@@ -11,14 +15,56 @@ img {
 h1 {
   font-family: "Press Start 2P", cursive;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.scoreBoard {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+
+.scoreBoard p {
+  text-align: center;
+}
+
+.rules {
+  text-align: center;
+}
+
+.numbers {
+  font-size: 2rem;
+}
+
+strong {
+  font-size: 1rem;
+}
+
+#corners {
+  border-radius: 25px;
+  background: #d3d3d3;
+  width: 40%;
+}
+
+#rcorners {
+  border-radius: 25px;
+  background: #f5fffa;
+  padding: 6%;
 }
 
 #rcorners1 {
   border-radius: 25px;
-  background: #d3d3d3;
+  background: #778899;
   padding: 20px;
   margin: 0 auto;
   width: 50%;
   height: 50%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
 }

@@ -17,17 +17,47 @@
   </head>
   <body>
     <div class="wrapper" id="rcorners1">
-      <h1>Crystal Collection Game:</h1>
+      <h1>Crystal Collection:</h1>
       <!-- the four leafs -->
-      <div class="container" id="rcorners1">
-        <!-- leafs created by Sia - https://thenounproject.com/siathedesigner/ on the
+
+      <!-- Rules of the game -->
+      <div class="instructions" id="rcorners">
+        <p class="rules">
+          <strong>Instructions: </strong> There are four crystals displayed as
+          buttons on the page. You will be shown a random number at the start of
+          the game. The goal of the game is to click on a crystal, it will add a
+          specific amount of points to to your total score. You win if your
+          total score matches the random number from the beginning of the game.
+          You lose if your score goes above the random number.
+        </p>
+      </div>
+
+      <!-- Scoreboard, Random Number, Total Score-->
+      <div class="scoreBoard" id="rcorners">
+        <div id="corners"><p><strong>Valuation:</strong></p><p class="numbers" id="randomNumber">0</p></div>
+        <div id="corners"><p><strong>Your Price:</strong></p><p class="numbers" id="totalScore">0</p></div>
+        <div class="score" id="corners">
+          <p><strong>Wins:</strong></p>
+          <p id="wins">0</><br />
+          <p><strong>Loses:</strong></p>
+          <p id="loses">0</p>
+        </div>
+      </div>
+
+      <!-- leafs created by Sia - https://thenounproject.com/siathedesigner/ on the
           noun project -->
-        <img src="images/gem1.svg" alt="gem1" />
-        <img src="images/gem2.svg" alt="gem2" />
-        <img src="images/gem3.svg" alt="gem3" />
-        <img src="images/gem4.svg" alt="gem4" />
+      <div class="container" id="rcorners">
+        <img class="gem1" src="images/gem1.svg" alt="gem1" />
+        <img class="gem2" src="images/gem2.svg" alt="gem2" />
+        <img class="gem3" src="images/gem3.svg" alt="gem3" />
+        <img class="gem4" src="images/gem4.svg" alt="gem4" />
       </div>
     </div>
+
+    <!-- footer -->
+    
+    <footer><p>copyright &copy; 2019 - Coded and Developed by Christine Hong</p></footer>
+    <!-- javascript file -->
     <script src="javascript/game.js"></script>
   </body>
 </html>
