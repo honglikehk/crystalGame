@@ -20,33 +20,52 @@ $(document).ready(function() {
     // generate random number when game is started = in valuation from 19-120
     valuation = Math.floor(Math.random() * 102) + 19;
     randomNumbers.textContent = valuation;
-
-    // from one to 12 ===
-    //  totalScore = Math.floor(Math.random() * 12) + 1;
   }
 
+  // function gemScoreGenerator() {
+  //   let randomNumber = Math.floor(Math.random() * 12) + 1;
+  //   return randomNumber;
+  // }
+
+  // console.log(gemScoreGenerator());
   //start game function
   function startGame() {
+    // create a variable that creates a random number generated from 1-12
+    let gemScore1 = Math.floor(Math.random() * 12) + 1;
+    let gemScore2 = Math.floor(Math.random() * 12) + 1;
+    let gemScore3 = Math.floor(Math.random() * 12) + 1;
+    let gemScore4 = Math.floor(Math.random() * 12) + 1;
+
     numberGenerator();
-    // when gem 1 is clicked then something will happen
+    // when gem 1-4 is clicked then something will happen
     $(".gem1").on("click", function() {
-      alert("you clicked me!!");
-      // $(".captain-planet").animate({ height: "300px" });
+      $(this).attr("alt", gemScore1);
+      totalScores.textContent = this.alt;
+      console.log(this.alt);
     });
 
     $(".gem2").on("click", function() {
-      alert("BAH!!");
-      // $(".captain-planet").animate({ height: "300px" });
+      $(this).attr("alt", gemScore2);
+      totalScores.textContent = this.alt;
+      console.log(this.alt);
     });
 
     $(".gem3").on("click", function() {
-      alert("BOO!");
-      // $(".captain-planet").animate({ height: "300px" });
+      $(this).attr("alt", gemScore3);
+      totalScores.textContent = this.alt;
+      console.log(this.alt);
     });
 
     $(".gem4").on("click", function() {
-      alert("DOH!!");
-      // $(".captain-planet").animate({ height: "300px" });
+      $(this).attr("alt", gemScore4);
+      totalScores.textContent = this.alt;
+      console.log(this.alt);
+    });
+
+    // when a crystal is clicked, then add the value to the total score
+    $(".diamond").on("click", function() {
+      // dont know yet
+      // problem: we need to add the scores in textContent so that whenever, someone clicks the button, the score is added.
     });
   }
 
