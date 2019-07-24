@@ -14,13 +14,13 @@ $(document).ready(function() {
   let randomNumbers = document.getElementById("randomNumber");
   let scoreWins = document.getElementById("wins");
   let scoreLoses = document.getElementById("loses");
-  let totalScores = document.getElementById("totalScore");
+  // let totalScores = document.getElementById("totalScore");
 
-  function numberGenerator() {
+  const numberGenerator = function() {
     // generate random number when game is started = in valuation from 19-120
     valuation = Math.floor(Math.random() * 102) + 19;
     randomNumbers.textContent = valuation;
-  }
+  };
 
   // function gemScoreGenerator() {
   //   let randomNumber = Math.floor(Math.random() * 12) + 1;
@@ -29,44 +29,37 @@ $(document).ready(function() {
 
   // console.log(gemScoreGenerator());
   //start game function
+
+  const randNum = function() {
+    return Math.floor(Math.random() * 12) + 1;
+  };
+
   function startGame() {
     // create a variable that creates a random number generated from 1-12
-    let gemScore1 = Math.floor(Math.random() * 12) + 1;
-    let gemScore2 = Math.floor(Math.random() * 12) + 1;
-    let gemScore3 = Math.floor(Math.random() * 12) + 1;
-    let gemScore4 = Math.floor(Math.random() * 12) + 1;
+    let gemScore1 = randNum();
+    let gemScore2 = randNum();
+    let gemScore3 = randNum();
+    let gemScore4 = randNum();
 
     numberGenerator();
     // when gem 1-4 is clicked then something will happen
-    $(".gem1").on("click", function() {
-      $(this).attr("alt", gemScore1);
-      totalScores.textContent = this.alt;
-      console.log(this.alt);
-    });
+    $(".gem").on("click", function() {
+      console.log(this.dataset.gemnumber);
+      if (this.dataset.gemnumber === "1") {
+        $("#totalScore").text((totalScore += gemScore1));
+      } else if (this.dataset.gemnumber === "2") {
+        $("#totalScore").text((totalScore += gemScore2));
+      } else if (this.dataset.gemnumber === "3") {
+        $("#totalScore").text((totalScore += gemScore3));
+      } else if (this.dataset.gemnumber === "4") {
+        $("#totalScore").text((totalScore += gemScore4));
+      }
 
-    $(".gem2").on("click", function() {
-      $(this).attr("alt", gemScore2);
-      totalScores.textContent = this.alt;
-      console.log(this.alt);
-    });
-
-    $(".gem3").on("click", function() {
-      $(this).attr("alt", gemScore3);
-      totalScores.textContent = this.alt;
-      console.log(this.alt);
-    });
-
-    $(".gem4").on("click", function() {
-      $(this).attr("alt", gemScore4);
-      totalScores.textContent = this.alt;
-      console.log(this.alt);
+      // totalScores.textContent += this.alt;
+      // console.log(this.alt);
     });
 
     // when a crystal is clicked, then add the value to the total score
-    $(".diamond").on("click", function() {
-      // dont know yet
-      // problem: we need to add the scores in textContent so that whenever, someone clicks the button, the score is added.
-    });
   }
 
   startGame();
