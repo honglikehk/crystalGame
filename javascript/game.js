@@ -12,6 +12,7 @@ $(document).ready(function() {
   let loses = 0;
 
   let randomNumbers = document.getElementById("randomNumber");
+  let scores = document.getElementById("totalScore");
   let scoreWins = document.getElementById("wins");
   let scoreLoses = document.getElementById("loses");
   // let totalScores = document.getElementById("totalScore");
@@ -26,6 +27,12 @@ $(document).ready(function() {
   //   let randomNumber = Math.floor(Math.random() * 12) + 1;
   //   return randomNumber;
   // }
+
+  function reset() {
+    totalScore = 0;
+    scores.innerText = 0;
+    startGame();
+  }
 
   // console.log(gemScoreGenerator());
   //start game function
@@ -45,6 +52,8 @@ $(document).ready(function() {
     // when gem 1-4 is clicked then something will happen
     $(".gem").on("click", function() {
       console.log(this.dataset.gemnumber);
+
+      // select the appropriate gem stone and add it on a random number each time.
       if (this.dataset.gemnumber === "1") {
         $("#totalScore").text((totalScore += gemScore1));
       } else if (this.dataset.gemnumber === "2") {
@@ -53,6 +62,23 @@ $(document).ready(function() {
         $("#totalScore").text((totalScore += gemScore3));
       } else if (this.dataset.gemnumber === "4") {
         $("#totalScore").text((totalScore += gemScore4));
+      }
+
+      console.log(totalScore);
+      console.log(valuation);
+      // if totalScore = valuation then, reset the game and add 1 point to the wins
+      if (totalScore === valuation) {
+        wins++;
+        scoreWins.innerText = wins;
+        scores.innerText = totalScore;
+        reset();
+
+        // if total score exceeds valuation then, reset the game and add 1 point to the loses
+      } else if (totalScore >= valuation) {
+        loses++;
+        scoreLoses.innerText = loses;
+        scores.innerText = totalScore;
+        reset();
       }
 
       // totalScores.textContent += this.alt;
